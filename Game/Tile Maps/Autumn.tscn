@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://l0q1fwkd33c1"]
+
+[node name="Autumn" type="TileMap"]
+format = 2
