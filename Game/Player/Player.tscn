@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://ciq3xs1rf6ig5"]
+
+[ext_resource type="Script" path="res://Player/Scripts/Player.gd" id="1_c7elq"]
+[ext_resource type="Texture2D" uid="uid://btixn7ecpaqhn" path="res://Player/Sprites/Blonde_warrior_sprite.png" id="1_pqj4m"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iivfw"]
+radius = 5.0
+height = 12.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_c7elq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_iivfw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -2)
+scale = Vector2(1, 1.10256)
+texture = ExtResource("1_pqj4m")
+hframes = 12
+frame = 10
