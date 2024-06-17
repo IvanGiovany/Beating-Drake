@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btixn7ecpaqhn"
-path="res://.godot/imported/Blonde_warrior_sprite.png-6c77bcaa6d05a1dc48d716688115325d.ctex"
+uid="uid://df05i3420bwky"
+path="res://.godot/imported/Main-Charecter.png-1b7d279e06bffdd548a68e2485aeed65.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Player/Sprites/Blonde_warrior_sprite.png"
-dest_files=["res://.godot/imported/Blonde_warrior_sprite.png-6c77bcaa6d05a1dc48d716688115325d.ctex"]
+source_file="res://Player/Sprites/Main-Charecter.png"
+dest_files=["res://.godot/imported/Main-Charecter.png-1b7d279e06bffdd548a68e2485aeed65.ctex"]
 
 [params]
 
