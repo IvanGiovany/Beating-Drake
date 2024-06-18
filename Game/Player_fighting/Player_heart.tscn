@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3h4fy4eyt7fu"]
+
+[ext_resource type="Script" path="res://Player_fighting/Scripts/Player_heart.gd" id="1_nan5c"]
+[ext_resource type="Texture2D" uid="uid://bydh2rfrqm5p5" path="res://Player_fighting/Sprites/Colebemis-Feather-Circle.512.png" id="2_rh377"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_34xy6"]
+
+[node name="PlayerHeart" type="CharacterBody2D"]
+collision_mask = 16
+script = ExtResource("1_nan5c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_34xy6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.042, 0.042)
+texture = ExtResource("2_rh377")
