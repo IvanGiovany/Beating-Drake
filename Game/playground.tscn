@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0wi0x574ul7p"]
-
-[ext_resource type="PackedScene" uid="uid://cln6mg4wtq8n7" path="res://Player/player.tscn" id="1_jeh2b"]
-
-[node name="Playground" type="Node2D"]
-
-[node name="Player" parent="." instance=ExtResource("1_jeh2b")]
-collision_mask = 0

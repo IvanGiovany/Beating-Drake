@@ -18,7 +18,7 @@ func _process(delta):
 		Input.get_axis("Up", "Down")
 	).normalized()
 	
-	velocity = direction * move_speed * delta
+	velocity = direction * move_speed 
 	
 
 
