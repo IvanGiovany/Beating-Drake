@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7y0b37oe1s67"
-path="res://.godot/imported/Healer_final_frame.png-42de813aac8363e8a72f3df6f0942336.ctex"
+uid="uid://b78p5qw4nescm"
+path="res://.godot/imported/Skull-Boss-Stage2.png-2d7727ec799b96793eacf4b60a001095.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://All_Sprites/Character_Sprites/Healer_final_frame.png"
-dest_files=["res://.godot/imported/Healer_final_frame.png-42de813aac8363e8a72f3df6f0942336.ctex"]
+source_file="res://All_Sprites/Character_Sprites/Enemies-Tower-Level1/Skull Boss/Skull-Boss-Stage2.png"
+dest_files=["res://.godot/imported/Skull-Boss-Stage2.png-2d7727ec799b96793eacf4b60a001095.ctex"]
 
 [params]
 

@@ -1,10 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://dbw0h5pr6lgir"]
+[gd_scene load_steps=4 format=3 uid="uid://dbw0h5pr6lgir"]
 
 [ext_resource type="Script" path="res://Scenes/Introduction Scene/Introduction.gd" id="1_5bcce"]
-[ext_resource type="PackedScene" path="res://Player/player.tscn" id="1_lyow0"]
+[ext_resource type="PackedScene" uid="uid://cln6mg4wtq8n7" path="res://Player/player.tscn" id="1_lyow0"]
+[ext_resource type="Script" path="res://Scenes/Introduction Scene/Timer.gd" id="3_xdu0u"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Introduction" type="Node2D"]
 script = ExtResource("1_5bcce")
 
 [node name="Player" parent="." instance=ExtResource("1_lyow0")]
 position = Vector2(2418, 1350)
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 5.0
+autostart = true
+script = ExtResource("3_xdu0u")
+
+[connection signal="child_entered_tree" from="." to="Player" method="_on_introduction_child_entered_tree"]
+[connection signal="timeout" from="Timer" to="Player" method="_on_timer_timeout"]

@@ -10,7 +10,9 @@ var current_state = "idle"
 var direction = Vector2.ZERO
 var move_speed = 400.0
 var facing = "down"
-var cut_scene_timer = 0.0
+
+var cutscene_duration =1.0  # Duration of the cutscene in seconds
+var cutscene_timer = 0.0     # Timer to track elapsed time in cutscene
 
 func _ready():
 	pass
@@ -18,11 +20,11 @@ func _ready():
 func _process(delta):
 	match game_state:
 		State.CUTSCENE:
-			print("here")
+			set_process(false)
 			handle_cutscene(delta)
 			update_animation()
 		State.PLAYER_CONTROL:
-			direction.x = Input.get_action_strength("Rigth") - Input.get_action_strength("Left")
+			direction.x = Input.get_action_strength("Right") - Input.get_action_strength("Left")
 			direction.y = Input.get_action_strength("Down") - Input.get_action_strength("Up")
 			detect_state()
 			detect_direction()
@@ -32,7 +34,9 @@ func _process(delta):
 func _physics_process(delta):
 	if game_state == State.PLAYER_CONTROL:
 		move_and_slide()
-		
+	else:
+		move_and_slide()
+
 func detect_state():
 	if direction != Vector2.ZERO:
 		current_state = "walk"
@@ -49,21 +53,31 @@ func detect_direction():
 	elif direction == Vector2.DOWN or direction == Vector2(-1,1) or direction == Vector2(1,-1):
 		facing = "down"
 	else:
-		return  
+		return
 
 func update_animation():
 	animated_sprite_2d.play(current_state + "_" + facing)
 
 func handle_cutscene(delta):
 	# Simulate cutscene movement
-	while cut_scene_timer < 100.0:
-		print(cut_scene_timer)
-		direction = Vector2.ZERO  # Stop player movement during cutscene
-		velocity = Vector2.ZERO
-		cut_scene_timer += delta
-	end_cutscene()
+	direction = Vector2.RIGHT  # Move the player during cutscene
+	velocity = Vector2(100, 0)  # Adjust velocity as needed
 
 func end_cutscene():
+	current_state = "idle"
 	game_state = State.PLAYER_CONTROL
-	direction = Vector2.RIGHT  # Example direction after cutscene ends
-	cut_scene_timer = 0.0
+	direction = Vector2.ZERO 
+	set_process(true)  # Resume player control after cutscene ends
+
+func _on_introduction_child_entered_tree(node):
+	game_state = State.CUTSCENE
+	current_state = "walk"
+	facing = "right"
+	cutscene_timer = 0.0  # Reset the timer when entering cutscene
+
+
+
+func _on_timer_timeout():
+	print("here")
+	end_cutscene()
+	pass # Replace with function body.

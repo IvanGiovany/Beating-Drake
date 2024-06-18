@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://k6r465akbxcx"
-path="res://.godot/imported/Blonde_warrior_sprite.png-d64a9aee8b3037589b349f672cbf4f9d.ctex"
+uid="uid://civ1ymyy1loc6"
+path="res://.godot/imported/Skull-Boss-Stage3.png-aa197ca011652465651be5aa5343c3a1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://All_Sprites/Character_Sprites/Blonde_warrior_sprite.png"
-dest_files=["res://.godot/imported/Blonde_warrior_sprite.png-d64a9aee8b3037589b349f672cbf4f9d.ctex"]
+source_file="res://All_Sprites/Character_Sprites/Enemies-Tower-Level1/Skull Boss/Skull-Boss-Stage3.png"
+dest_files=["res://.godot/imported/Skull-Boss-Stage3.png-aa197ca011652465651be5aa5343c3a1.ctex"]
 
 [params]
 
