@@ -78,6 +78,5 @@ func _on_introduction_child_entered_tree(node):
 
 
 func _on_timer_timeout():
-	print("here")
 	end_cutscene()
 	pass # Replace with function body.
