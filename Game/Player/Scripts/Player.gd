@@ -1,5 +1,5 @@
 extends CharacterBody2D
-class_name Player
+class_name Player1
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var collision_shape_2d = $CollisionShape2D
@@ -22,7 +22,7 @@ func _process(delta):
 			handle_cutscene(delta)
 			update_animation()
 		State.PLAYER_CONTROL:
-			direction.x = Input.get_action_strength("Rigth") - Input.get_action_strength("Left")
+			direction.x = Input.get_action_strength("Right") - Input.get_action_strength("Left")
 			direction.y = Input.get_action_strength("Down") - Input.get_action_strength("Up")
 			detect_state()
 			detect_direction()
