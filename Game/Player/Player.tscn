@@ -192,6 +192,7 @@ size = Vector2(28.8571, 13.1429)
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
 position = Vector2(549, 421)
+scale = Vector2(0.9, 0.9)
 collision_mask = 5
 platform_floor_layers = 4294967041
 platform_wall_layers = 1
@@ -208,3 +209,11 @@ frame_progress = 0.299511
 position = Vector2(7, -34)
 scale = Vector2(7, 7)
 shape = SubResource("RectangleShape2D_8tl6g")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(7, -34)
+scale = Vector2(7, 7)
+shape = SubResource("RectangleShape2D_8tl6g")
+debug_color = Color(0.837664, 0.26299, 0.709625, 0.42)

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqmiq1h5fcl30"]
+
+[ext_resource type="Script" path="res://In-Game Props/Statues/Statue_script.gd" id="1_xkoe7"]
+[ext_resource type="Texture2D" uid="uid://c0o77gkx3uihb" path="res://In-Game Props/Statues/Angel.png" id="2_5ypjl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_npb5h"]
+size = Vector2(34.6, 20.2)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+script = ExtResource("1_xkoe7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+scale = Vector2(3, 3)
+texture = ExtResource("2_5ypjl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.99999, 209)
+scale = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_npb5h")

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckno2u3yst8dg"]
+
+[ext_resource type="PackedScene" uid="uid://cqmiq1h5fcl30" path="res://In-Game Props/Statues/ANGEL.tscn" id="1_xuc3n"]
+
+[node name="Angels" type="Node2D"]
+
+[node name="StaticBody2D" parent="." instance=ExtResource("1_xuc3n")]
