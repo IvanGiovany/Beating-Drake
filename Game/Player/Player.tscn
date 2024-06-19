@@ -190,7 +190,11 @@ animations = [{
 size = Vector2(28.8571, 13.1429)
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 1
 position = Vector2(549, 421)
+collision_mask = 5
+platform_floor_layers = 4294967041
+platform_wall_layers = 1
 script = ExtResource("1_etnrk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
