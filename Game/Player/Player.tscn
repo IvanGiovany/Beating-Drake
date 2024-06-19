@@ -202,10 +202,10 @@ script = ExtResource("1_etnrk")
 position = Vector2(12, -139.75)
 scale = Vector2(1, 1.0016)
 sprite_frames = SubResource("SpriteFrames_2jswq")
-animation = &"walk_left"
-frame_progress = 0.299511
+animation = &"idle_left"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(7, -34)
 scale = Vector2(7, 7)
 shape = SubResource("RectangleShape2D_8tl6g")

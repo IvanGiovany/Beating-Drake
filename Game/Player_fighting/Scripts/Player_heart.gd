@@ -4,6 +4,7 @@ extends CharacterBody2D
 var direction: Vector2 = Vector2.ZERO
 var move_speed: float = 25000.0
 
+@onready var animation_player = $AnimationPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

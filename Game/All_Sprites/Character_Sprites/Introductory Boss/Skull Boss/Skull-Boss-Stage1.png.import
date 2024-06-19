@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b78p5qw4nescm"
-path="res://.godot/imported/Skull-Boss-Stage2.png-2d7727ec799b96793eacf4b60a001095.ctex"
+uid="uid://coyprcpho6ipw"
+path="res://.godot/imported/Skull-Boss-Stage1.png-d7a8897cb03dd35ae0bbb07dcd5367d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://All_Sprites/Character_Sprites/Enemies-Tower-Level1/Skull Boss/Skull-Boss-Stage2.png"
-dest_files=["res://.godot/imported/Skull-Boss-Stage2.png-2d7727ec799b96793eacf4b60a001095.ctex"]
+source_file="res://All_Sprites/Character_Sprites/Introductory Boss/Skull Boss/Skull-Boss-Stage1.png"
+dest_files=["res://.godot/imported/Skull-Boss-Stage1.png-d7a8897cb03dd35ae0bbb07dcd5367d4.ctex"]
 
 [params]
 

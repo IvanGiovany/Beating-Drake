@@ -11,8 +11,6 @@ var direction = Vector2.ZERO
 var move_speed = 400.0
 var facing = "down"
 
-var cutscene_duration =1.0  # Duration of the cutscene in seconds
-var cutscene_timer = 0.0     # Timer to track elapsed time in cutscene
 
 func _ready():
 	pass
@@ -60,8 +58,8 @@ func update_animation():
 
 func handle_cutscene(delta):
 	# Simulate cutscene movement
-	direction = Vector2.RIGHT  # Move the player during cutscene
-	velocity = Vector2(100, 0)  # Adjust velocity as needed
+	#direction = Vector2.RIGHT  # Move the player during cutscene
+	velocity = Vector2(200, 0)   # Adjust velocity as needed
 
 func end_cutscene():
 	current_state = "idle"
@@ -73,7 +71,7 @@ func _on_introduction_child_entered_tree(node):
 	game_state = State.CUTSCENE
 	current_state = "walk"
 	facing = "right"
-	cutscene_timer = 0.0  # Reset the timer when entering cutscene
+	
 
 
 
