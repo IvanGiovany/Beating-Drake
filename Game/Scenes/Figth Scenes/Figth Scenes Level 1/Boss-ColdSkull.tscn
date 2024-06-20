@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://1dwmoetkm1fe"]
+
+[ext_resource type="Texture2D" uid="uid://coyprcpho6ipw" path="res://All_Sprites/Character_Sprites/Enemies-Tower-Level1/Skull Boss/Skull-Boss-Stage1.png" id="1_tmttm"]
+[ext_resource type="Texture2D" uid="uid://b78p5qw4nescm" path="res://All_Sprites/Character_Sprites/Enemies-Tower-Level1/Skull Boss/Skull-Boss-Stage2.png" id="2_n8j6b"]
+[ext_resource type="Texture2D" uid="uid://civ1ymyy1loc6" path="res://All_Sprites/Character_Sprites/Enemies-Tower-Level1/Skull Boss/Skull-Boss-Stage3.png" id="3_thd03"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pqyir"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_tmttm")
+}],
+"loop": true,
+"name": &"Stage1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_n8j6b")
+}],
+"loop": true,
+"name": &"Stage2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_thd03")
+}],
+"loop": true,
+"name": &"Stage3",
+"speed": 5.0
+}]
+
+[node name="Boss-coldSkull" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2202, 692)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_pqyir")
+animation = &"Stage1"
