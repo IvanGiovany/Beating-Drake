@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://7guxdqlorkh4"]
+
+[ext_resource type="Script" path="res://Scenes/Figth Scenes/Figth Scenes Level 1/Bullet.gd" id="1_h3njb"]
+[ext_resource type="Texture2D" uid="uid://b1hdcxb4y28sn" path="res://All_Sprites/Character_Sprites/Enemies-Tower-Level1/Skull Boss/Bullet.png" id="2_7t6ro"]
+
+[node name="Bullet" type="Area2D"]
+process_mode = 4
+position = Vector2(385, 136)
+script = ExtResource("1_h3njb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("2_7t6ro")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(16, -22, 16, 30, 14, 34, 13, 38, -12, 38, -14, 30, -14, -22, -12, -30, -8, -36, -4, -39, 4, -39, 10, -38, 14, -30)

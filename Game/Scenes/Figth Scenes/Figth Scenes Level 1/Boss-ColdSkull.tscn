@@ -1,8 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://1dwmoetkm1fe"]
+[gd_scene load_steps=17 format=3 uid="uid://1dwmoetkm1fe"]
 
 [ext_resource type="Texture2D" uid="uid://coyprcpho6ipw" path="res://All_Sprites/Character_Sprites/Enemies-Tower-Level1/Skull Boss/Skull-Boss-Stage1.png" id="1_tmttm"]
 [ext_resource type="Texture2D" uid="uid://b78p5qw4nescm" path="res://All_Sprites/Character_Sprites/Enemies-Tower-Level1/Skull Boss/Skull-Boss-Stage2.png" id="2_n8j6b"]
 [ext_resource type="Texture2D" uid="uid://civ1ymyy1loc6" path="res://All_Sprites/Character_Sprites/Enemies-Tower-Level1/Skull Boss/Skull-Boss-Stage3.png" id="3_thd03"]
+[ext_resource type="Texture2D" uid="uid://bmwncx6h8p2ir" path="res://Player/Sprites/HEart.png" id="4_6p4ga"]
+[ext_resource type="Script" path="res://Player_fighting/Scripts/Player_heart.gd" id="4_72mnh"]
+[ext_resource type="Script" path="res://Scenes/Figth Scenes/Figth Scenes Level 1/EnemySpawner.gd" id="6_lonup"]
+[ext_resource type="Script" path="res://Scenes/Figth Scenes/Figth Scenes Level 1/HeartBox-Area.gd" id="6_pvu65"]
+[ext_resource type="Texture2D" uid="uid://bporqwqo5nd1f" path="res://Player_fighting/Sprites/WHite.png" id="7_1qex7"]
+[ext_resource type="PackedScene" uid="uid://7guxdqlorkh4" path="res://All_Sprites/Character_Sprites/Enemies-Tower-Level1/Skull Boss/bullet.tscn" id="7_r4auv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pqyir"]
 animations = [{
@@ -31,10 +37,116 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_227tf"]
+a = Vector2(-2, 1106)
+b = Vector2(0, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_406u0"]
+a = Vector2(1745.22, 0.151123)
+b = Vector2(0.217529, 0.151123)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_252nf"]
+a = Vector2(-0.451172, -1106.06)
+b = Vector2(-0.451172, -0.0561523)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_nyv2k"]
+a = Vector2(-1742.17, -1.56445)
+b = Vector2(0.833496, -1.56445)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7jb0p"]
+texture = ExtResource("7_1qex7")
+texture_region_size = Vector2i(50, 50)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-25, -25, 25, -25, 25, 25, -25, 25)
+
+[sub_resource type="TileSet" id="TileSet_dj88m"]
+tile_size = Vector2i(50, 50)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_7jb0p")
+
 [node name="Boss-coldSkull" type="Node2D"]
+self_modulate = Color(0.0512855, 0.00660639, 0.00344127, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(2202, 692)
-scale = Vector2(10, 10)
+position = Vector2(2375, 738)
+scale = Vector2(15, 14.256)
 sprite_frames = SubResource("SpriteFrames_pqyir")
 animation = &"Stage1"
+
+[node name="HeartBox" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1505.0
+offset_top = 1462.0
+offset_right = 3248.0
+offset_bottom = 2568.96
+
+[node name="ColorRect" type="ColorRect" parent="HeartBox"]
+visible = false
+layout_mode = 0
+offset_right = 1743.0
+offset_bottom = 1106.96
+color = Color(0.00165562, 0.000424989, 1.41008e-10, 1)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="HeartBox"]
+script = ExtResource("4_72mnh")
+
+[node name="Sprite2D" type="Sprite2D" parent="HeartBox/CharacterBody2D"]
+position = Vector2(906, 498)
+texture = ExtResource("4_6p4ga")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HeartBox/CharacterBody2D"]
+position = Vector2(895, 548)
+polygon = PackedVector2Array(10, -3, 14, -3, 14, -10, 22, -10, 22, -18, 28, -18, 28, -25, 40, -24, 41, -31, 47, -33, 47, -48, 55, -49, 55, -87, 49, -88, 47, -93, 41, -96, 41, -101, 24, -102, 22, -95, 14, -95, 14, -86, 1, -86, 1, -95, -14, -96, -13, -102, -34, -102, -35, -94, -41, -95, -41, -88, -46, -87, -47, -56, -40, -56, -41, -40, -35, -40, -35, -32, -27, -33, -26, -25, -21, -24, -22, -18, -7, -16, -7, -8, 1, -8, 0, -3)
+
+[node name="Area2D" type="Area2D" parent="HeartBox/CharacterBody2D"]
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="HeartBox/CharacterBody2D/Area2D"]
+position = Vector2(895, 548)
+polygon = PackedVector2Array(10, -3, 14, -3, 14, -10, 22, -10, 22, -18, 28, -18, 28, -25, 40, -24, 41, -31, 47, -33, 47, -48, 55, -49, 55, -87, 49, -88, 47, -93, 41, -96, 41, -101, 24, -102, 22, -95, 14, -95, 14, -86, 1, -86, 1, -95, -14, -96, -13, -102, -34, -102, -35, -94, -41, -95, -41, -88, -46, -87, -47, -56, -40, -56, -41, -40, -35, -40, -35, -32, -27, -33, -26, -25, -21, -24, -22, -18, -7, -16, -7, -8, 1, -8, 0, -3)
+
+[node name="EnemySpawner" type="Node2D" parent="HeartBox"]
+position = Vector2(886, 93)
+script = ExtResource("6_lonup")
+enemy_instance = ExtResource("7_r4auv")
+
+[node name="Timer" type="Timer" parent="HeartBox/EnemySpawner"]
+wait_time = 2.0
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="HeartBox"]
+script = ExtResource("6_pvu65")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HeartBox/Area2D"]
+shape = SubResource("SegmentShape2D_227tf")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="HeartBox/Area2D"]
+position = Vector2(-2.21753, 1105.85)
+shape = SubResource("SegmentShape2D_406u0")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="HeartBox/Area2D"]
+position = Vector2(1743.45, 1106.06)
+shape = SubResource("SegmentShape2D_252nf")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="HeartBox/Area2D"]
+position = Vector2(1741.17, 1.56445)
+shape = SubResource("SegmentShape2D_nyv2k")
+
+[node name="TileMap" type="TileMap" parent="HeartBox"]
+tile_set = SubResource("TileSet_dj88m")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 20, 0, 0, 21, 0, 0, 22, 0, 0, 23, 0, 0, 24, 0, 0, 25, 0, 0, 26, 0, 0, 27, 0, 0, 28, 0, 0, 29, 0, 0, 30, 0, 0, 31, 0, 0, 32, 0, 0, 33, 0, 0, 34, 0, 0, 65570, 0, 0, 131106, 0, 0, 196642, 0, 0, 262178, 0, 0, 327714, 0, 0, 393250, 0, 0, 458786, 0, 0, 524322, 0, 0, 589858, 0, 0, 655394, 0, 0, 720930, 0, 0, 786466, 0, 0, 852002, 0, 0, 917538, 0, 0, 983074, 0, 0, 1048610, 0, 0, 1114146, 0, 0, 1179682, 0, 0, 1245218, 0, 0, 1310754, 0, 0, 1376290, 0, 0, 1376256, 0, 0, 1376257, 0, 0, 1376258, 0, 0, 1376259, 0, 0, 1376260, 0, 0, 1376261, 0, 0, 1376262, 0, 0, 1376263, 0, 0, 1376264, 0, 0, 1376265, 0, 0, 1376266, 0, 0, 1376267, 0, 0, 1376268, 0, 0, 1376269, 0, 0, 1376270, 0, 0, 1376271, 0, 0, 1376272, 0, 0, 1376273, 0, 0, 1376274, 0, 0, 1376275, 0, 0, 1376276, 0, 0, 1376277, 0, 0, 1376278, 0, 0, 1376279, 0, 0, 1376280, 0, 0, 1376281, 0, 0, 1376282, 0, 0, 1376283, 0, 0, 1376284, 0, 0, 1376285, 0, 0, 1376286, 0, 0, 1376287, 0, 0, 1376288, 0, 0, 1376289, 0, 0, 65536, 0, 0, 131072, 0, 0, 196608, 0, 0, 262144, 0, 0, 327680, 0, 0, 393216, 0, 0, 458752, 0, 0, 524288, 0, 0, 589824, 0, 0, 655360, 0, 0, 720896, 0, 0, 786432, 0, 0, 851968, 0, 0, 917504, 0, 0, 983040, 0, 0, 1048576, 0, 0, 1114112, 0, 0, 1179648, 0, 0, 1245184, 0, 0, 1310720, 0, 0)
+
+[node name="ColorRect2" type="ColorRect" parent="HeartBox"]
+visible = false
+z_index = -1
+layout_mode = 0
+offset_left = -1505.0
+offset_top = -1462.0
+offset_right = 3102.0
+offset_bottom = 1131.0
+color = Color(0, 0, 0, 1)
+
+[connection signal="timeout" from="HeartBox/EnemySpawner/Timer" to="HeartBox/EnemySpawner" method="_on_timer_timeout"]
