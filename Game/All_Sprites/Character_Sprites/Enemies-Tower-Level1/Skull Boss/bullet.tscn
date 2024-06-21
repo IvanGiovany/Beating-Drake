@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://b1hdcxb4y28sn" path="res://All_Sprites/Character_Sprites/Enemies-Tower-Level1/Skull Boss/Bullet.png" id="2_7t6ro"]
 
 [node name="Bullet" type="Area2D"]
-process_mode = 4
 position = Vector2(385, 136)
 script = ExtResource("1_h3njb")
 
